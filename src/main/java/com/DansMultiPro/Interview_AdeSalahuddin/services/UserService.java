@@ -45,7 +45,7 @@ public class UserService {
     @Autowired
     private LoggerUtils loggerUtils;
 
-    public ResponseEntity<Object> authenticationUser(LoginUserRequest userRequest) throws Exception {
+    public ResponseEntity<Object> authenticationUser(LoginUserRequest userRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userRequest.getUsername(), userRequest.getPassword()));
             SecurityContextHolder.getContext().setAuthentication(authentication);
